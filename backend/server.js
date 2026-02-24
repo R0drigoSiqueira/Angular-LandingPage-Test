@@ -3,9 +3,9 @@ import cors from "cors";
 
 const app = express();
 
-// CORS (permite o Angular)
+// CORS
 app.use(cors({
-  origin: "http://localhost:4200", // se o teu Angular roda noutra porta, ajusta
+  origin: "http://localhost:4200",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
@@ -24,7 +24,7 @@ app.post("/newsletter", (req, res) => {
   return res.status(200).json({ message: "OK" });
 });
 
-// para veres se o servidor está vivo
+// Ver se o servidor está ativo
 app.get("/", (req, res) => res.send("API OK"));
 
 app.listen(3000, () => console.log("Servidor a correr em http://localhost:3000"));
